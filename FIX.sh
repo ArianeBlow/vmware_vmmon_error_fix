@@ -2,6 +2,13 @@
 
 cd /tmp/
 
+#Just in case
+DEP ()
+{
+  sudo apt update -y
+  sudo apt install gcc
+}
+
 #Fix Host-Header
 fix-head ()
 {
@@ -21,6 +28,7 @@ fix-vmmon ()
 }
 
 echo "starting"
+DEP
 fix-head
 fix-vmmon
 echo "fix done ... Starting vmware app"
